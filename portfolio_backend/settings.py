@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -60,10 +60,7 @@ MIDDLEWARE = [
 # Allow your Vue frontend origin
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",       # Vite dev
-    # Production
-    # "https://saklain-portfolio.vercel.app",
-    # local 
-    "http://localhost:3000",
+    "https://saklain-portfolio.vercel.app",       # Production
 ]
 
 # ── Gmail SMTP (free) ──────────────────────────────────────────
@@ -141,4 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+
 STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
